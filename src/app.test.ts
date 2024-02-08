@@ -142,7 +142,7 @@ describe('filterMessages', () => {
                             {field: 'field1', type: 'number', operation: 'gt', value: 123},
                         ],
                     },
-                    {field: 'field2', type: 'date', operation: 'after', value: new Date()},
+                    {field: 'field2', type: 'date', operation: 'after', value: new Date('2023-12-31')},
                 ],
             }),
         ).toEqual([complexMessage, complexMessage3]);
