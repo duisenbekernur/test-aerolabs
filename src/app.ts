@@ -38,11 +38,11 @@ function evaluateStringFilter(value: string, filter: StringFilter): boolean {
         case 'eq':
             return value === filter.value;
         case 'startsWith':
-            return value.startsWith(filter.value);
+            return value?.startsWith(filter.value);
         case 'endsWith':
-            return value.endsWith(filter.value);
+            return value?.endsWith(filter.value);
         case 'contains':
-            return value.includes(filter.value);
+            return value?.includes(filter.value);
         default:
             return false;
     }
@@ -74,7 +74,7 @@ function evaluateDateFilter(value: DateType, filter: DateFilter): boolean {
 
     switch (filter.operation) {
         case 'eq':
-            return dateValue.getTime() === new Date(filter.value).getTime();
+            return dateValue?.getTime() === new Date(filter.value).getTime();
         case 'after':
             return dateValue > new Date(filter.value);
         case 'before':
